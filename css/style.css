@@ -1,0 +1,314 @@
+@font-face {
+    font-family: 'Comfortaa-medium';
+    src: url('/fonts/subset-Comfortaa-Medium.woff2') format('woff2'), url('/fonts/subset-Comfortaa-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comfortaa-medium';
+}
+
+:root {
+    /* ===== Colors ===== */
+    --body-color: #dde7ff;
+    --link-color: #000000;
+    --sidebar-color: #FFF;
+    --input-background-color: #f5f8ff;
+    --input-border-color: #c7c7c7;
+    --primary-color: #ffffff;
+    --primary-text-color: #e2601a;
+    --primary-text-hover-color: #b84e15;
+    --primary-color-light: #F6F5FF;
+    --profile-btn: #f5f5f5;
+    --footer-color: #1a202c;
+    --toggle-color: #8b8b8b;
+    --text-color: #353535;
+    --border-color: #e2601a;
+    --discord-color: #7289da;
+    --icon-color: #3d3d3d;
+    /* ====== Transition ====== */
+    --tran-03: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.3s ease;
+    --tran-05: all 0.3s ease;
+}
+
+::selection {
+    background-color: var(--discord-color);
+    color: #fff;
+}
+
+body.dark {
+    --body-color: #191c20;
+    --link-color: #dde7ff;
+    --sidebar-color: #111111;
+    --primary-color: #111111;
+    --input-background-color: #191c20;
+    --input-border-color: #383e47;
+    --primary-color-light: #3a3b3c;
+    --profile-btn: #131313;
+    --toggle-color: #fff;
+    --text-color: #cfcfcf;
+    --discord-color: #2c2c2c;
+    --icon-color: #191c20;
+    --footer-color: #0c0c0c;
+    --news-details-color: rgba(255, 255, 255, 0.6);
+    --topnav-button-hover-bg-color: #ff9400;
+    --topnav-button-hover-text-color: #ffffff;
+    --topnav-button-bg-color: #ff9400;
+    --topnav-icon-color: #dddddd;
+    --credit-icon-color: #ffa600;
+    --navbar-text-color: #fff;
+    --scroll-background: #383e47;
+    --scroll-color: #000000;
+}
+
+body {
+    background-image: url(/pictures/login-background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    object-fit: cover;
+    background-position: center;
+    transition: all 0.3s;
+}
+
+.footer-socila-icon a {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--icon-color);
+    color: white;
+    border-radius: 25%;
+    margin-right: 8px;
+    font-size: 25px;
+    transition: all 0.3s;
+}
+
+.footer-socila-icon a:hover {
+    color: white;
+    background: #161616;
+}
+
+
+.container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 30px;
+}
+
+.error {
+    background: #F2DEDE;
+    color: #A94442;
+    padding: 10px;
+    width: 95%;
+    border-radius: 5px;
+    margin: 20px auto;
+ }
+ 
+ .success {
+    background: #D4EDDA;
+    color: #40754C;
+    padding: 10px;
+    width: 95%;
+    border-radius: 5px;
+    margin: 20px auto;
+ }
+
+.home-back {
+    position: absolute;
+    left: 40px;
+    top: 30px;
+    padding: 15px;
+    border-radius: 50%;
+    background-color: var(--sidebar-color);
+    font-size: 18px;
+}
+
+.home-back i {
+    color: var(--text-color);
+}
+
+.form{
+    position: absolute;
+    max-width: 430px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 0.95rem;
+    background: var(--primary-color);
+}
+
+.forgot-pass {
+    position: absolute;
+    right: 0;
+}
+
+@media only screen and (max-width: 290px) {
+    .form-link-inline {
+        display: inline-block;
+    }
+    .forgot-pass {
+        position: relative;
+        padding: 20px;
+    }
+}
+
+.form-check-input[type=checkbox] {
+    border-radius: 0.325em;
+    cursor: pointer;
+}
+
+.form-check-input:hover {
+    cursor: pointer;
+}
+
+#rememberme {
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+header{
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text-color);
+    text-align: center;
+}
+form{
+    margin-top: 30px;
+}
+.form .field{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 6px;
+}
+.field input,
+.field button{
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 6px;
+}
+.field input{
+    color: var(--text-color);
+    outline: none;
+    padding: 0 15px;
+    border: 1px solid var(--input-border-color);
+    background-color: var(--input-background-color);
+}
+.field input:focus{
+    border-bottom-width: 2px;
+}
+
+.eye-icon{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #aaaaaa;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.re-eye-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #aaaaaa;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.field button{
+    color: #fff;
+    background-color: var(--primary-text-color);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.field button:hover{
+    background-color: #b43f00;
+}
+.form-link, .form-link-inline{
+    text-align: center;
+    margin-top: 10px;
+}
+.form-link span,
+.form-link a, .form-link-inline{
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+.form-link-inline {
+    display: inline-block;
+}
+
+.form a{
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 400;
+}
+.form-content a:hover{
+    color: var(--primary-text-hover-color);
+}
+
+@media screen and (max-width: 400px) {
+    .form{
+        padding: 20px 10px;
+    }
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: var(--sidebar-color);
+    color: var(--text-color);
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--sidebar-color) transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }

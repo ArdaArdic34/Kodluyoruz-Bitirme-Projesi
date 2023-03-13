@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="yardım-merkezi.css">
+    <link rel="stylesheet" href="script.js">
+    <link rel="stylesheet" href="yardım-merkezi.js">
+    <title>LostNetwork</title>
+</head>
+<body>
+    <div id="snackbar-succes">Sunucu adresi başarıyla kopyalandı</div>
+    <header>
+        <div class="announcement-text">%50 İndirim Aktif</div>
+            <div class="header-top-content">
+                <div class="container text-center">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <div class="header-server-count" id="copyserverip" onclick="modalsucces()">
+                                <a href="#" onclick='copyText("play.hypixel.net")'>
+                                    <div class="me-3">
+                                        <i class="fa-solid fa-gamepad text-white" style="font-size: 3rem; float: left; margin-right: 15px;"></i>
+                                    </div>
+                                    <div style="color: #bbb;">
+                                        <span id="player-count">00</span>
+                                        <span>KİŞİ OYNUYOR!</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-white" style="text-transform: uppercase;" id="server-ip">SUNUCU ADRESİ</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="header-play">
+                                <div class="zoom-hover text-center">
+                                    <a href="#">
+                                        <img src="pictures/server-logo.png" alt="" width="240px">
+                                    </a>
+                                </div>
+                                <div class="play-btn">
+                                    <a href="#" class="play-now-btn rainbow-text">
+                                        <span>Hemen Oyna</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="discord-server" id="joindcserver">
+                                <a href="#" class="d-flex text-end text-uppercase" target="_blank" style="color: white;">
+                                    <div>
+                                        <div>
+                                            <span style="color: #bbb!important;">TIKLA KATIL!</span>
+                                        </div>
+                                        <div>
+                                            <span>DİSCORD SUNUCUSU</span>
+                                        </div>
+                                    </div>
+                                    <div class="ms-3">
+                                        <i class="fa-brands fa-discord text-white" style="font-size: 3rem; margin-left: 15px;"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bg-56">
+                <div class="header-bg-56" id="navbar">
+                    <nav class="navbar navbar-expand-lg navbar" aria-label="Offcanvas navbar large">
+                        <div class="container">
+
+                            <ul class="navbar-nav justify-content-start flex-grow-1 pe-3 d-none-navbar">
+                                <li class="nav-item">
+                                    <a href="index.html" class="nav-link" aria-current="page"><i class="fa-solid fa-house me-2"></i>ANASAYFA</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="magaza.html" class="nav-link" aria-current="page"><i class="fa-solid fa-bag-shopping me-2"></i>MAĞAZA</a>
+                                </li>
+                                <li>
+                                    <a href="kredi.html" class="nav-link" aria-current="page"><i class="fa-sharp fa-solid fa-coins me-2"></i>KREDİ</a>
+                                </li>
+                                <li>
+                                    <a href="destek.html" class="nav-link" aria-current="page"><i class="fa-solid fa-envelope me-2"></i>DESTEK</a>
+                                </li>
+                                <li>
+                                    <a href="yardım-merkezi.html" class="nav-link active-navbar" aria-current="page"><i class="fa-solid fa-question me-2"></i>Yardım Merkezi</a>
+                                </li>
+                            </ul>
+
+                          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2"><span class="navbar-toggler-icon"></span></button>
+                          
+                            <div class="offcanvas offcanvas-start border-bottom" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+                                <div class="offcanvas-header">
+                                  <h5 class="offcanvas-title" id="offcanvasNavbar2Label">AncientRealms</h5>
+                                  <div data-bs-theme="dark"><button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button></div>
+                                  
+                            </div>
+
+                            <div class="offcanvas-body justify-content-end">
+                                <ul class="navbar-nav justify-content-start flex-grow-1 d-none">
+                                    <li class="nav-item">
+                                        <a href="index.html" class="nav-link p-3" aria-current="page"><i class="fa-solid fa-house me-2"></i>ANASAYFA</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="magaza.html" class="nav-link border-top p-3" aria-current="page"><i class="fa-solid fa-bag-shopping me-2"></i>MAĞAZA</a>
+                                    </li>
+                                    <li>
+                                        <a href="kredi.html" class="nav-link border-top p-3" aria-current="page"><i class="fa-sharp fa-solid fa-coins me-2"></i>KREDİ</a>
+                                    </li>
+                                    <li>
+                                        <a href="destek.html" class="nav-link border-top p-3" aria-current="page"><i class="fa-solid fa-envelope me-2"></i>DESTEK</a>
+                                    </li>
+                                    <li>
+                                        <a href="yardım-merkezi.html" class="nav-link border-bottom border-top p-3" aria-current="page"><i class="fa-solid fa-question me-2"></i>Yardım Merkezi</a>
+                                    </li>
+                                </ul>
+
+                                <div class="justify-content-end d-none-navbar">
+                                    <ul class="navbar-nav justify-content-end flex-grow-1">
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link" aria-current="page"><i class="fa-solid fa-user me-2"></i>GİRİŞ YAP</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link active-register" aria-current="page">KAYIT OL</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="offcanvas-footer border-top d-none p-3">
+                                <a href="#" style="color: var(--text-color);" class="btn btn-outline-secondary mb-2 w-100" aria-current="page"><i class="fa-solid fa-user me-2"></i>GİRİŞ YAP</a>
+                                <a href="#" class="btn btn-profile-color w-100" aria-current="page">KAYIT OL</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+    </header>
+
+    <main>
+        <div class="rsp-container">
+            <ul class="navigation" style="margin-left: 1%;">
+                <li><a href="index.html" style="color: var(--text-color); margin-left: 15px;">Ana Sayfa</a></li>
+                <li style="color: #8c8c8c;">Yardım Merkezi</li>
+            </ul>
+            <h4 style="margin-left: 1.5%;">Yardım ve Destek başlıkları</h4>
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="help-center-s-s-s">
+
+                        <!-- HESAP YARDIM -->
+
+                        <button class="accordion "><i class="fa-solid fa-user" style="margin-right: 10px;"></i>Hesap</button>
+                        <div class="panel">
+                            <div class="panel-desc">
+                                <a id="ancient-register"><span style="margin-top: 55px;"><i class="fa-solid fa-circle-question" style="margin-right: 10px;"></i>AncientRealms'a kayıt olmak istiyorum ?</span></a>
+                                <br><br>
+                                <a id="forgot-pass"><span style="margin-top: 55px;"><i class="fa-solid fa-circle-question" style="margin-right: 10px;"></i>Şifremi unuttum, ne yapacağım?</span></a>
+                                <br><br>
+                                <a id="change-name"><span><i class="fa-solid fa-circle-question" style="margin-right: 10px;"></i>Kullanıcı adımı değiştirebilir miyim?</span></a>
+                                <br><br>
+                                <a id="credit-transfer"><span><i class="fa-solid fa-circle-question" style="margin-right: 10px;"></i>Hesabımda bulunan Kredi'yi başka bir oyuncuya aktarabilir miyim?</span></a>
+                                <br><br>
+                                <a id="cosmetics-transfer"><span><i class="fa-solid fa-circle-question" style="margin-right: 10px;"></i>Hesabımda bulunan kozmetikler, Coin'ler, seviyemi vb. başka bir hesaba aktarabilir miyim?</span></a>
+                                <br><br>
+                                <a id="disguise"><span><i class="fa-solid fa-circle-question" style="margin-right: 10px;"></i>Disguise yetkisi almak istiyorum, ne yapacağım?</span></a>
+                                <br><br>
+                                <a id="youtuber-tag"><span><i class="fa-solid fa-circle-question" style="margin-right: 10px;"></i>Youtuber rütbesi almak istiyorum, ne yapacağım?</span></a>
+                            </div>
+                        </div>
+
+                        <!-- ŞİKAYET YARDIM -->
+
+                        <button class="accordion"><i class="fa-solid fa-shield-halved" style="margin-right: 10px;"></i> Şikayet</button>
+                        <div class="panel">
+                            <div class="panel-desc">
+                                <a id="report"><span><i class="fa-solid fa-circle-question" style="margin-right: 10px;"></i>Oyunda hile kullanan birini gördüm, ne yapacağım?</span></a>
+                                <br><br>
+                                <a id="unfair-ban"><span><i class="fa-solid fa-circle-question" style="margin-right: 10px;"></i>Hesabımın haksız yere engellendiğini düşünüyorum, ne yapabilirim?</span></a>
+                            </div>
+                        </div>
+
+                        <!-- HATA YARDIM -->
+
+                        <button class="accordion"><i class="fa-sharp fa-solid fa-circle-exclamation" style="margin-right: 10px;"></i> Hatalar</button>
+                        <div class="panel">
+                            <div class="panel-desc">
+                                <a id="found-bug"><span><i class="fa-solid fa-circle-question" style="margin-right: 10px;"></i>Oyunda bir hata buldum, ne yapacağım?</span></a>
+                            </div>
+                        </div>
+
+                        <!-- MARKET YARDIM -->
+
+                        <button class="accordion"><i class="fa-solid fa-bag-shopping" style="margin-right: 10px;"></i> Market</button>
+                        <div class="panel">
+                            <div class="panel-desc">
+                                <a id="whats-credit"><span><i class="fa-solid fa-circle-question" style="margin-right: 10px;"></i>Kredi nedir?</span></a>
+                                <br><br>
+                                <a id="whats-vip"><span><i class="fa-solid fa-circle-question" style="margin-right: 10px;"></i>VIP nedir?</span></a>
+                                <br><br>
+                                <a id="buy-credit-another"><span><i class="fa-solid fa-circle-question" style="margin-right: 10px;"></i>Başka bir hesaba Kredi satın alabilir miyim?</span></a>
+                                <br><br>
+                                <a id="lost-item"><span><i class="fa-solid fa-circle-question" style="margin-right: 10px;"></i>Satın aldığım oyun içi eşyayı kaybettim/çaldırdım, ne yapacağım?</span></a>
+                                <br><br>
+                                <a id="discount-time"><span><i class="fa-solid fa-circle-question" style="margin-right: 10px;"></i>%50 indirim ne zaman aktif olur?</span></a>
+                                <br><br>
+                                <a id="no-stock"><span><i class="fa-solid fa-circle-question" style="margin-right: 10px;"></i>RVIP+ satın almak istiyorum fakat stok yok, ne zaman gelir?</span></a>
+                                <br><br>
+                                <a id="diffirent-vip"><span><i class="fa-solid fa-circle-question" style="margin-right: 10px;"></i>VIP türlerinin özellikleri/farkları nelerdir?</span></a>
+                                <br><br>
+                            </div>
+                        </div>
+
+                        <!-- ÖDEME YARDIM -->
+
+                        <button class="accordion"><i class="fa-regular fa-credit-card" style="margin-right: 10px;"></i> Ödemeler</button>
+                        <div class="panel">
+                            <div class="panel-desc">
+                                <a id="payment-methods"><span><i class="fa-solid fa-circle-question" style="margin-right: 10px;"></i>Hangi ödeme yöntemlerini kullanabilirim?</span></a>
+                                <br><br>
+                                <a id="cant-payment"><span><i class="fa-solid fa-circle-question" style="margin-right: 10px;"></i>Ödeme yapamıyorum, sebebi ne olabilir?</span></a>
+                                <br><br>
+                                <a id="return-credit"><span><i class="fa-solid fa-circle-question" style="margin-right: 10px;"></i>Ödeme işlemini iade edebilir miyim?</span></a>
+                            </div>
+                        </div>
+
+                        <!-- SUNUCU YARDIM -->
+
+                        <button class="accordion"><i class="fa-solid fa-gamepad" style="margin-right: 10px;"></i>AncientRealms</button>
+                        <div class="panel">
+                            <div class="panel-desc">
+                                <a id="whats-ancient"><span><i class="fa-solid fa-circle-question" style="margin-right: 10px;"></i>AncientRealms nedir?</span></a>
+                            </div>
+                        </div>
+                        <!-- YARDIM end -->
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-8">
+                    <div class="card default-card">
+                        <div class="card-body">
+                          <h3 class="card-title" style="color: var(--text-color)!important;" id="card-title">AncientRealms Nedir?</h3>
+                          <h6 class="card-subtitle mb-2 text-muted" id="card-update-date"><small>Son Güncelleme - 16/02/2023</small></h6>
+                          <p class="card-text" id="card-body-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam officia ullam inventore necessitatibus molestias. Iusto neque ipsam voluptate?</p>
+                        </div>
+                    </div>
+
+                    <!-- HESAP CARD KISMI -->
+
+                    <div class="card ancient-register">
+                        <div class="card-body">
+                          <h3 class="card-title" style="color: var(--text-color)!important;" id="card-title">AncientRealms'a nasıl kayıt olabilirim?</h3>
+                          <h6 class="card-subtitle mb-2 text-muted" id="card-update-date"><small>Son Güncelleme - 16/02/2023</small></h6>
+                          <p class="card-text" id="card-body-text"><a href="#">Buraya</a> tıklayarak kayıt işlemini hızlı bir şekilde gerçekleştirebilirsin.</p>
+                        </div>
+                    </div>
+
+                    <div class="card forgot-pass">
+                        <div class="card-body">
+                          <h3 class="card-title" style="color: var(--text-color)!important;" id="card-title">Şifremi unuttum, ne yapacağım?</h3>
+                          <h6 class="card-subtitle mb-2 text-muted" id="card-update-date"><small>Son Güncelleme - 16/02/2023</small></h6>
+                          <p class="card-text" id="card-body-text"><a href="#">Buraya</a> tıklayarak şifreni sıfırlayabilirsin.</p>
+                        </div>
+                    </div>
+
+                    <div class="card change-name">
+                        <div class="card-body">
+                          <h3 class="card-title" style="color: var(--text-color)!important;" id="card-title">Kullanıcı adımı değiştirebilir miyim?</h3>
+                          <h6 class="card-subtitle mb-2 text-muted" id="card-update-date"><small>Son Güncelleme - 16/02/2023</small></h6>
+                          <p class="card-text" id="card-body-text">Hayır, kayıt olduktan sonra kullanıcı adını değiştirme seçeneği yoktur.</p>
+                        </div>
+                    </div>
+
+                    <div class="card credit-transfer">
+                        <div class="card-body">
+                          <h3 class="card-title" style="color: var(--text-color)!important;" id="card-title">Hesabımda bulunan Kredi'yi başka bir oyuncuya aktarabilir miyim?</h3>
+                          <h6 class="card-subtitle mb-2 text-muted" id="card-update-date"><small>Son Güncelleme - 16/02/2023</small></h6>
+                          <p class="card-text" id="card-body-text">Hayır, hesabınızda bulunan Kredi'yi başka bir oyuncuya gönderemezsiniz.</p>
+                        </div>
+                    </div>
+
+                    <div class="card cosmetics-transfer">
+                        <div class="card-body">
+                          <h3 class="card-title" style="color: var(--text-color)!important;" id="card-title">Hesabımda bulunan kozmetikler, Coin'ler, seviyemi vb. başka bir hesaba aktarabilir miyim?</h3>
+                          <h6 class="card-subtitle mb-2 text-muted" id="card-update-date"><small>Son Güncelleme - 16/02/2023</small></h6>
+                          <p class="card-text" id="card-body-text">Hayır, hesabınızda bulunan herhangi üyeliği, Coin'i vb. başka bir hesaba aktaramazsınız.</p>
+                        </div>
+                    </div>
+
+                    <div class="card disguise">
+                        <div class="card-body">
+                          <h3 class="card-title" style="color: var(--text-color)!important;" id="card-title">Disguise yetkisi almak istiyorum, ne yapacağım?</h3>
+                          <h6 class="card-subtitle mb-2 text-muted" id="card-update-date"><small>Son Güncelleme - 16/02/2023</small></h6>
+                          <p class="card-text" id="card-body-text">Disguise yetkisi almak için gereken başvuru şartları:</p>
+                          <div class="card-text" style="margin-left: 3%;">
+                            <ul>
+                                <li>YouTube kanalınızda AncientRealms'da kaydedilmiş +30 videonun yüklü olması.</li>
+                                <li>+2.500 aboneye sahip olmak.</li>
+                                <li>İzlenme sayınızın abone sayınızla eş değer olması.</li>
+                            </ul>
+                          </div>
+                          <p class="card-text">Eğer yukarıdaki şartları karşılıyorsan info@ancientrealms.com adresine mail göndererek başvuruda bulunabilirsin.</p>
+                        </div>
+                    </div>
+
+                    <div class="card youtuber-tag">
+                        <div class="card-body">
+                          <h3 class="card-title" style="color: var(--text-color)!important;" id="card-title">Youtuber rütbesi almak istiyorum, ne yapacağım?</h3>
+                          <h6 class="card-subtitle mb-2 text-muted" id="card-update-date"><small>Son Güncelleme - 16/02/2023</small></h6>
+                          <p class="card-text" id="card-body-text">YouTuber rütbesi almak için gereken başvuru şartları:</p>
+                          <div class="card-text" style="margin-left: 3%;">
+                            <ul>
+                                <li>16 yaşından büyük olmak.</li>
+                                <li>YouTube kanalınızda +50 videonun yüklü olması.</li>
+                                <li>+10.000 aboneye sahip olmak.</li>
+                                <li>Aktif olarak kaliteli ve küfürsüz içerik üretmek.</li>
+                                <li>AncientRealms içeriği üretiyor olmak veya haftada en az 2 videonuzun AncientRealms içeriği olması.</li>
+                                <li>Haftada en az iki video yayımlamak.</li>
+                                <li>İzlenme sayınızın abone sayınızla eş değer olması (10.000 aboneyseniz en az 6.000 izlenme zorunludur.</li>
+                                <li>YouTuber rütbesi kötüye kullanılmamalıdır (Oyunculara hakaret, gereksiz ve itici konuşmalar ve AncientRealms hakkında ezici konuşmalar vb.)</li>
+                            </ul>
+                          </div>
+                          <p class="card-text">Eğer yukarıdaki şartları karşılıyorsan info@ancientrealms.com adresine mail göndererek başvuruda bulunabilirsin.</p>
+                        </div>
+                    </div>
+
+                    <!-- ŞİKAYET CARD KISMI -->
+
+                    <div class="card report">
+                        <div class="card-body">
+                          <h3 class="card-title" style="color: var(--text-color)!important;" id="card-title">Oyunda hile kullanan birini gördüm, ne yapacağım?</h3>
+                          <h6 class="card-subtitle mb-2 text-muted" id="card-update-date"><small>Son Güncelleme - 16/02/2023</small></h6>
+                          <p class="card-text" id="card-body-text">Oyun içerisinde /report komutunu kullanarak oyuncuyu hile kategorisinde bildirebilirsin. Daha sonra watchdog ekibimiz oyuncuyu inceleyerek gerekli cezayı verecektir.</p>
+                        </div>
+                    </div>
+
+                    <div class="card unfair-ban">
+                        <div class="card-body">
+                          <h3 class="card-title" style="color: var(--text-color)!important;" id="card-title">Hesabımın haksız yere engellendiğini düşünüyorum, ne yapabilirim?</h3>
+                          <h6 class="card-subtitle mb-2 text-muted" id="card-update-date"><small>Son Güncelleme - 16/02/2023</small></h6>
+                          <p class="card-text" id="card-body-text">Hesabının haksız yere engellendiğini düşünüyorsan Buraya tıklayarak Ceza İtirazı kategorisinde destek talep oluşturabilirsin. Destek ekibimiz ceza itirazını inceledikten sonra geri dönüş yapacaktır.</p>
+                        </div>
+                    </div>
+
+                    <!-- ŞİKAYET CARD KISMI -->
+
+                    <div class="card found-bug">
+                        <div class="card-body">
+                          <h3 class="card-title" style="color: var(--text-color)!important;" id="card-title">Oyunda bir hata buldum, ne yapacağım?</h3>
+                          <h6 class="card-subtitle mb-2 text-muted" id="card-update-date"><small>Son Güncelleme - 16/02/2023</small></h6>
+                          <p class="card-text" id="card-body-text"><a href="destek.html">Buraya</a> tıklayarak destek sistemi üzerinden bize ulaşarak hatayı bildirebilirsin. Daha sonra geliştirici ekibimiz hatayı inceleyerek kısa sürede sonuca ulaştıracaktır.</p>
+                        </div>
+                    </div>
+
+                    <!-- MARKET KISMI -->
+
+                    <div class="card whats-credit">
+                        <div class="card-body">
+                          <h3 class="card-title" style="color: var(--text-color)!important;" id="card-title">Kredi nedir?</h3>
+                          <h6 class="card-subtitle mb-2 text-muted" id="card-update-date"><small>Son Güncelleme - 16/02/2023</small></h6>
+                          <p class="card-text" id="card-body-text">AncientRealms marketinde kullanılan sanal para birimidir.
+                            <br><br>
+                            Kredi kullanarak AncientRealms marketinde bulunan ürünleri satın alabilirsin.</p>
+                        </div>
+                    </div>
+
+                    <div class="card whats-vip">
+                        <div class="card-body">
+                          <h3 class="card-title" style="color: var(--text-color)!important;" id="card-title">VIP nedir?</h3>
+                          <h6 class="card-subtitle mb-2 text-muted" id="card-update-date"><small>Son Güncelleme - 16/02/2023</small></h6>
+                          <p class="card-text" id="card-body-text">VIP, AncientRealms marketinde bulunan ve Kredi ile satın alınan oyunculara sunulmuş özel üyelik türleridir.</p>
+                        </div>
+                    </div>
+
+                    <div class="card buy-credit-another">
+                        <div class="card-body">
+                          <h3 class="card-title" style="color: var(--text-color)!important;" id="card-title">Başka bir hesaba Kredi satın alabilir miyim?</h3>
+                          <h6 class="card-subtitle mb-2 text-muted" id="card-update-date"><small>Son Güncelleme - 16/02/2023</small></h6>
+                          <p class="card-text" id="card-body-text">Evet, ödeme esnasında Hediye Bilgisi bölümünden hediye etmek istediğiniz kullanıcı adını yazarak hediye Kredi gönderebilirsin.</p>
+                        </div>
+                    </div>
+
+                    <div class="card lost-item">
+                        <div class="card-body">
+                          <h3 class="card-title" style="color: var(--text-color)!important;" id="card-title">Satın aldığım oyun içi eşyayı kaybettim/çaldırdım, ne yapacağım?</h3>
+                          <h6 class="card-subtitle mb-2 text-muted" id="card-update-date"><small>Son Güncelleme - 16/02/2023</small></h6>
+                          <p class="card-text" id="card-body-text">Satın aldığınız ürünün veya kredinin güvenliği tamamen sizin sorumluluğunuzdadır. Ürünün çalınması veya kaybolması durumunda geri iade yapılmaz.</p>
+                        </div>
+                    </div>
+
+                    <div class="card discount-time">
+                        <div class="card-body">
+                          <h3 class="card-title" style="color: var(--text-color)!important;" id="card-title">%50 indirim ne zaman aktif olur?</h3>
+                          <h6 class="card-subtitle mb-2 text-muted" id="card-update-date"><small>Son Güncelleme - 16/02/2023</small></h6>
+                          <p class="card-text" id="card-body-text">%50 indirim özel günlerde veya sürpriz zamanlarda aktif oluyor.</p>
+                        </div>
+                    </div>
+
+                    <div class="card no-stock">
+                        <div class="card-body">
+                          <h3 class="card-title" style="color: var(--text-color)!important;" id="card-title">RVIP+ satın almak istiyorum fakat stok yok, ne zaman gelir?</h3>
+                          <h6 class="card-subtitle mb-2 text-muted" id="card-update-date"><small>Son Güncelleme - 16/02/2023</small></h6>
+                          <p class="card-text" id="card-body-text">RVIP+ stokları özel günlerde veya sürpriz zamanlarda açılabiliyor.</p>
+                        </div>
+                    </div>
+
+                    <div class="card diffirent-vip">
+                        <div class="card-body">
+                          <h3 class="card-title" style="color: var(--text-color)!important;" id="card-title">VIP türlerinin özellikleri/farkları nelerdir?</h3>
+                          <h6 class="card-subtitle mb-2 text-muted" id="card-update-date"><small>Son Güncelleme - 16/02/2023</small></h6>
+                          <p class="card-text" id="card-body-text"><a href="magaza/rütbeler.html">Buraya</a> tıklayarak vip türlerinin özelliklerini detaylı bir şekilde inceleyebilirsin.</p>
+                        </div>
+                    </div>
+
+                    <!-- ÖDEME KISMI -->
+
+                    <div class="card payment-methods">
+                        <div class="card-body">
+                          <h3 class="card-title" style="color: var(--text-color)!important;" id="card-title">Hangi ödeme yöntemlerini kullanabilirim?</h3>
+                          <h6 class="card-subtitle mb-2 text-muted" id="card-update-date"><small>Son Güncelleme - 16/02/2023</small></h6>
+                          <p class="card-text" id="card-body-text">Mobil (Turkcell, Türk Telekom, Vodafone), Kredi veya Banka Kartı, İninal, Papara vb. veya Havale yöntemlerini kullanabilirsin.</p>
+                        </div>
+                    </div>
+
+                    <div class="card cant-payment">
+                        <div class="card-body">
+                          <h3 class="card-title" style="color: var(--text-color)!important;" id="card-title">Ödeme yapamıyorum, sebebi ne olabilir?</h3>
+                          <h6 class="card-subtitle mb-2 text-muted" id="card-update-date"><small>Son Güncelleme - 16/02/2023</small></h6>
+                          <p class="card-text" id="card-body-text">Ödeme yapamıyorsanız sorun ödeme yapmaya çalıştığınız banka/operatör ile alakalı olabilir. bunun nedenlerinden bazıları şunlar olabilir;</p>
+                          <div class="card-text" style="margin-left: 3%;">
+                            <ul>
+                                <li>Ödeme yapmaya çalıştığınız banka/kredi kartının veya telefonun internet ödemelerine kapalı olması.</li>
+                                <li>Ödeme yapmaya çalıştığınız banka/kredi kartının veya telefonun limitinin dolmuş olması/yetersiz bakiye olması.</li>
+                                <li>Ödeme yapmaya çalıştığınız banka/kredi kartının bloke olmuş veya kullanıma kapalı olması.</li>
+                            </ul>
+                          </div>
+                          <p class="card-text">Genellikle ödeme alınmadığında oluşan sorunun bilgisi ve nedeni kullanıcının telefonuna mesaj olarak bildirilir.
+                            <br><br>
+                            Eğer yukarıdaki sorunlardan birini yaşamıyorsanız kullandığınız kredi kartı/banka kartı/operatör ile iletişime geçip sorunun sebebini ve çözüm için ne yapabileceğinizi danışabilirsiniz.</p>
+                        </div>
+                    </div>
+
+                    <div class="card return-credit">
+                        <div class="card-body">
+                          <h3 class="card-title" style="color: var(--text-color)!important;" id="card-title">Ödeme işlemini iade edebilir miyim?</h3>
+                          <h6 class="card-subtitle mb-2 text-muted" id="card-update-date"><small>Son Güncelleme - 16/02/2023</small></h6>
+                          <p class="card-text" id="card-body-text">AncientRealms hizmet sözleşmesindeki iade politikasına ilişkin yaptığınız bir ödemeyi iade edemezsiniz.</p>
+                        </div>
+                    </div>
+
+                    <!-- SERVER KISMI -->
+
+                    <div class="card whats-ancient">
+                        <div class="card-body">
+                          <h3 class="card-title" style="color: var(--text-color)!important;" id="card-title">AncientRealms Nedir?</h3>
+                          <h6 class="card-subtitle mb-2 text-muted" id="card-update-date"><small>Son Güncelleme - 16/02/2023</small></h6>
+                          <p class="card-text" id="card-body-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut libero corporis dolore consequuntur aperiam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="more-help">
+                <h5>Aradığınız cevap burada yok mu ?</h5>
+                <a href="destek.html">
+                    <div class="support-btn">Destek talebi oluştur</div>
+                </a>
+            </div>
+    </main>
+
+    <button onclick="topFunction()" id="myBtn"><i class="fa-solid fa-arrow-up"></i></button>
+    <footer class="bg-dark-gradient footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-lg-4 my-4">
+                        <div class="mb-4">
+                            <img src="pictures/server-logo.png" title="" alt="" width="220px">
+                         </div>
+                        <div class="footer-desc" style="margin-bottom: 15px;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam officia ullam inventore necessitatibus molestias. Iusto neque ipsam voluptate?</div>
+                        <div class="nav footer-socila-icon">
+                            <a id="dark-moon">
+                                <i class="fa-solid fa-moon"></i>
+                            </a>
+                        </div>
+                    </div>
+                <div class="col-sm-12 col-lg-2 my-4">
+                    <h5 class="text-white h6 mb-4 footer-title">HIZLI ERİŞİM</h5>
+                    <ul class="list-unstyled gray-link footer-links">
+                    <li>
+                        <a href="index.html"><i class="fa-solid fa-house" style="margin-right: 10px;"></i> Ana Sayfa</a>
+                    </li>
+                    <li>
+                        <a href="magaza.html"><i class="fa-solid fa-bag-shopping" style="margin-right: 10px;"></i>Mağaza</a>
+                    </li>
+                    <li>
+                        <a href="kredi.html"><i class="fa-sharp fa-solid fa-coins" style="margin-right: 10px;"></i>Kredi</a>
+                    </li>
+                    <li>
+                        <a href="destek.html"><i class="fa-solid fa-envelope" style="margin-right: 10px;"></i>Destek</a>
+                    </li>
+                    <li>
+                        <a href="yardım-merkezi.html"><i class="fa-solid fa-question" style="margin-right: 10px;"></i>Yardım Merkezi</a>
+                    </li>
+                </ul>
+            </div>
+        <div class="col-sm-12 col-lg-2 my-4">
+            <h5 class="text-white h6 mb-4 footer-title">Sosyal Medya</h5>
+            <ul class="list-unstyled gray-links footer-links">
+                <li>
+                    <a href="#"> <i class="fa-brands fa-instagram" style="margin-right: 10px;"></i>Instagram</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-brands fa-twitter" style="margin-right: 10px;"></i>Twitter</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-brands fa-youtube" style="margin-right: 10px;"></i>YouTube</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-brands fa-discord" style="margin-right: 10px;"></i> Discord</a>
+                </li>
+            </ul>
+        </div>
+    <div class="col-sm-12 col-lg-4 my-4">
+        <h5 class="text-white h6 mb-4 footer-title">İletişim</h5>
+            <ul class="list-unstyled gray-link footer-links">
+                <li>
+                    <a href="#"><i class="fa-regular fa-envelope" style="margin-right: 5px;"></i> info@ancientrealms.com</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom footer-border-top light py-3">
+        <div class="container text-center copyrg">
+            <p class="m-0">&copy;<script>document.write(new Date().getFullYear());</script> AncientRealms | Tüm Hakları Saklıdır.</a></p>
+            <span style="color: gray;">AncientRealms is not affiliated with Mojang AB.</span>
+        </div>
+    </div>
+    </footer>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="script.js"></script>
+    <script src="yardım-merkezi.js"></script>
+    <script 
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+        function copyText (text) {
+          const element = document.createElement('textarea');
+          element.value = text;
+          document.body.appendChild(element);
+          element.focus();
+          element.setSelectionRange(0, element.value.length);
+          document.execCommand('copy');
+          document.body.removeChild(element);
+        }
+
+        function initServerData(serverIp,serverPort){
+            const serverIpElement = document.getElementById('server-ip');
+            serverIpElement.innerHTML = serverIp;
+        
+            console.log('https://mcapi.us/server/status?ip='+serverIp+'&port='+serverPort);
+            fetch('https://mcapi.us/server/status?ip='+serverIp+'&port='+serverPort)
+            .then(response => response.json())
+            .then(data => handleServerStatus(data));
+        
+            function handleServerStatus(data){
+                if(data.status=='error'){
+                    console.log(data.error);
+                    return false;
+                }
+                const playerCounter = document.getElementById("player-count");
+                playerCounter.innerHTML = data.players.now;
+            } 
+        
+        }
+        
+        initServerData("play.hypixel.net","25565");
+        
+        </script>
+        <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+            
+            for (i = 0; i < acc.length; i++) {
+              acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                  panel.style.maxHeight = null;
+                } else {
+                  panel.style.maxHeight = panel.scrollHeight + "px";
+                } 
+              });
+            }
+            </script>
+</body>
+</html>
